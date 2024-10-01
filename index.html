@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hall de la Fama</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript"> emailjs.init('7srjC1uhHZCJcAv9E')</script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(''); /* Fondo de pantalla */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-color: rgba(240, 240, 240, 0.8); 
+            scroll-behavior: smooth; 
+        }
+        
+        header {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: #fff;
+            padding: 2%;
+            text-align: center;
+            transition: background-color 0.3s ease; 
+            display: ;
+            justify-content: ;
+            align-items: center;
+        }
+        
+        header:hover {
+            background-color: rgba(85, 85, 85, 0.8); 
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin-right: 2%;
+            transition: transform 0.3s ease; 
+        }
+        
+        nav ul li:hover {
+            transform: scale(1.1); 
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease; 
+        }
+        
+        nav ul li a:hover {
+            color: #ffd700; 
+        }
+        
+        main {
+            padding: 2%;
+        }
+        
+        section {
+            margin-bottom: 3%;
+            background-color: rgba(255, 255, 255, 0.8); 
+            border-radius: 10px;
+            padding: 2%;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease; 
+        }
+        
+        section:hover {
+            transform: translateY(-5px); 
+        }
+        
+        section h2 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 1%;
+            margin-bottom: 2%;
+        }
+        
+        section p {
+            color: #555;
+        }
+        
+        footer {
+            background-color: rgba(51, 51, 51, 0.8); 
+            color: #fff;
+            text-align: center;
+            padding: 1%;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+        }
+
+        #logo {
+            flex: 1;
+            text-align: center;
+            position: absolute;
+        }
+
+        #logo img {
+            width: auto;
+            height: 100px;
+        }
+
+        .logo-equipo {
+                flex: 1;
+                text-align: center;
+            }
+    
+        .logo-equipo img {
+            width: auto;/* Ajusta el tamaño máximo de los logos según sea necesario */
+            height: 220px;
+            object-fit: cover;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Colapsar los bordes de las celdas */
+        }
+
+        th, td {
+            border: 1px solid black; /* Borde de 1px sólido negro */
+            padding: 8px; /* Espaciado interno de las celdas */
+            text-align: center; /* Alineación centrada del texto */
+        }
+
+        th {
+            background-color: #f2f2f2; /* Fondo gris claro para los encabezados */
+        }
+
+        @keyframes firework {
+            0% { transform: translate(var(--x), var(--initialY)); width: var(--initialSize); opacity: 1; }
+            50% { width: 0.5vmin; opacity: 1; }
+            100% { width: var(--finalSize); opacity: 0; }
+        }
+
+        /* @keyframes fireworkPseudo {
+        0% { transform: translate(-50%, -50%); width: var(--initialSize); opacity: 1; }
+        50% { width: 0.5vmin; opacity: 1; }
+        100% { width: var(--finalSize); opacity: 0; }
+        }
+        */
+
+        .firework,
+        .firework::before,
+        .firework::after
+        {
+            --initialSize: 0.5vmin;
+            --finalSize: 45vmin;
+            --particleSize: 0.2vmin;
+            --color1: yellow;
+            --color2: khaki;
+            --color3: white;
+            --color4: lime;
+            --color5: gold;
+            --color6: mediumseagreen;
+            --y: -30vmin;
+            --x: -50%;
+            --initialY: 60vmin;
+            content: "";
+            animation: firework 2s infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, var(--y));
+            width: var(--initialSize);
+            aspect-ratio: 1;
+            background: 
+
+            /*
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 0%,
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 0%,
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 100%,
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 100%,    
+            */
+    
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 50% 0%,
+            radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 50%,
+            radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 50% 100%,
+            radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 0% 50%,
+    
+            /* bottom right */
+            radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 95% 90%,
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 90% 70%,
+            radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 60%,
+            radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 55% 80%,
+            radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 70% 77%,
+            radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 80% 90%,
+    
+            /* bottom left */
+            radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 22% 90%,
+            radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 45% 90%,
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 70%,
+            radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 10% 60%,
+            radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 31% 80%,
+            radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 28% 77%,
+            radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 13% 72%,
+
+            /* top left */
+            radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 80% 10%,
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 95% 14%,
+            radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 90% 23%,
+            radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 100% 43%,
+            radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 85% 27%,
+            radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 77% 37%,
+            radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 60% 7%,
+    
+            /* top right */
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 22% 14%,
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 45% 20%,
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 34%,
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 10% 29%,
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 31% 37%,
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 28% 7%,
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 13% 42%
+            ;
+            background-size: var(--initialSize) var(--initialSize);
+            background-repeat: no-repeat;
+        }
+
+        .firework::before {
+            --x: -50%;
+            --y: -50%;
+            --initialY: -50%;
+            /*   transform: translate(-20vmin, -2vmin) rotate(40deg) scale(1.3) rotateY(40deg); */
+            transform: translate(-50%, -50%) rotate(40deg) scale(1.3) rotateY(40deg);
+            /*   animation: fireworkPseudo 2s infinite; */
+        }
+
+
+        .firework::after {
+            --x: -50%;
+            --y: -50%;
+            --initialY: -50%;
+            /*   transform: translate(44vmin, -50%) rotate(170deg) scale(1.15) rotateY(-30deg); */
+            transform: translate(-50%, -50%) rotate(170deg) scale(1.15) rotateY(-30deg);
+            /*   animation: fireworkPseudo 2s infinite; */
+        }
+
+        .firework:nth-child(2) {
+            --x: 30vmin;
+        }
+
+
+        .firework:nth-child(2),
+        .firework:nth-child(2)::before,
+        .firework:nth-child(2)::after {
+            --color1: pink;
+            --color2: violet;
+            --color3: fuchsia;
+            --color4: orchid;
+            --color5: plum;
+            --color6: lavender;  
+            --finalSize: 40vmin;                        
+            left: 30%;
+            top: 60%;
+            animation-delay: -0.25s;
+        }
+
+        .firework:nth-child(3) {
+            --x: -30vmin;
+            --y: -50vmin;
+        }
+
+        .firework:nth-child(3),
+        .firework:nth-child(3)::before,
+        .firework:nth-child(3)::after {
+            --color1: cyan;
+            --color2: lightcyan;
+            --color3: lightblue;
+            --color4: PaleTurquoise;
+            --color5: SkyBlue;
+            --color6: lavender;
+            --finalSize: 35vmin;
+            left: 70%;
+            top: 60%;
+            animation-delay: -0.4s;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhm9IqF9ACZSoifyRxL30LmHfcH9ba3lbV9gj7MBQiMxCJ0wl6AbUbL9c81RXrVgPl5q5YXs9eePFYqjuZWB4CVF_Y7G4-ulRm0eHo5ZLf2e6RjnahYWmNvZNXDPguH1cmxGVFUoZIyj5SyThtjqLReFjCjUO-Dvostgb5gG1P6vRry4mSdwYSZjvZdRnIR" alt="Logo Hall de la Fama" id="logo">
+        </div>    
+        <div>
+            <h1>Hall de la Fama</h1>
+            <nav>
+                <ul>
+                    <li><a href="index">Torneo de Dobles</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section id="apuesta">
+            <h2>Campeón: Toronjito88-Numas Salazar</h2>
+            <div class="firework"></div>
+            <div class="logo-equipo">
+                <div class="firework"></div>
+                <div class="firework"></div>
+                <img src="https://blogger.googleusercontent.com/img/a/AVvXsEiPAEe7hKXaEk_TvxNtWqI_kcFDvTkJGwPNKErbkh-TsgGoFVkLct99cBCFnGBOOm988aoPN0MkDfDC3C-87VzcRk6V-83s8u71KlVj2wowmvxtXtqx6s0t2JS4jUvJVdNejY5Zp1B1f_YizubjhwqGa6yii2WthXJUnhG3JKnBrqfrE4VC2kk-_3LmHrv-" alt="Toronjito88">
+                <div class="firework"></div>
+            </div>
+            <h3>Podios:</h3>
+            <p>Torneo Oficial de Dobles</p>
+        </section>
+        <section id="apuesta">
+            <h2>Sub Campeón: Missighost-Valbuena Juan José</h2>
+            <div class="logo-equipo">
+                <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgyp9hVEZm0nVgroIj3z4ir_y7bWiymAhw3Q2A09i4iaJB3Qy26dNR9p5U0OcAEucig07Qa8OrPexPyAwUS38-nqlYhMrdEZtGRDC6UCqVVO1mBdzQqIDSmus21qnzLVEeomp6hqahKDdoSgEby5nKUOE86wkCHU0lWANjixUj6gcN2XYbgKo1zObOGaR-1" alt="Missighost">
+            </div>
+            <h3>Podios:</h3>
+            <p>Torneo Oficial de Dobles</p><br>
+            <h2>Tercer lugar: Patitos Ase Sinos-Carlos Diaz</h2>
+            <div class="logo-equipo">
+                <img src="https://blogger.googleusercontent.com/img/a/AVvXsEikcGCjrvV-MRPP_C0kgsGpiewDWfAHlqb0A1DusmHiLo3P4LQU-amKnxbroeIXvtDmk1JNaMx_Bs7Ii54AyCdaoeE0wuude4By_7QQnBKEDvZSxPINLm9SGKVYonn7vh50Zwuk-za3AKSs-n_OUVuIfWsL_MVX37JkpJXGxuplpsD9515OoTyba2bY_oam" alt="Patitos Ase Sinos">
+            </div>
+            <h3>Podios:</h3>
+            <p>Guerra de Regiones</p>
+            <p>Torneo Oficial de Dobles</p>
+        </section>
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2" style="background-color: green;">Tabla de apuestas</th>
+                    </tr>
+                    <tr>
+                        <th style="background-color: darkgrey;">Participante</th>
+                        <th style="background-color: darkgray;">Puntos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr></tr>
+                        <th>Alfredo Preza</th>
+                        <th>16</th>
+                    </tr>
+                    <tr>
+                        <th>Carlos "Maynez" Diaz</th>
+                        <th>14</th>
+                    </tr>
+                    <tr>
+                        <th>Iker Alejandro AlRen</th>
+                        <th>12</th>
+                    </tr>
+                    <tr>
+                        <th>Christian Aguayo</th>
+                        <th>8</th>
+                    </tr>
+                    <tr>
+                        <th>Adgio Guzman</th>
+                        <th>7</th>
+                    </tr>
+                    <tr>
+                        <th>Miguel Yoc</th>
+                        <th>4</th>
+                    </tr>
+                    <tr>
+                        <th>Numas Salazar</th>
+                        <th>2</th>
+                    </tr>
+                    <tr>
+                        <th>Angel Carpio</th>
+                        <th>1</th>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Derechos de autor © 2024 Mi Página Web. Todos los derechos reservados.</p><br>
+        <p>Únete al grupo en: <a href="https://www.facebook.com/groups/1765381460409727/?ref=share&mibextid=NSMWBT"><i class="fab fa-facebook"></i></a></p>
+    </footer>
+
+</body>
+</html>
